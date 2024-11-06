@@ -13,7 +13,7 @@ namespace DiceProj
                 List<int> diceResults = new List<int>();//Creates a list to store dice result values
                 Random random = new Random(); //Creates a variable that will be later asigned a value of a random number.
 
-                for (int i = 0; i < numberOfDice; i++)//creates a random number between 1 and 7 set amount of times, stores it into a list and prints it into console.
+                for (int i = 0; i < numberOfDice; i++)//Creates an object called random of class Random that allows to assign a random number to a variable later on.
                 {
                     int roll = random.Next(1, 7);
                     diceResults.Add(roll);
