@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DiceProj
 {
@@ -19,6 +20,10 @@ namespace DiceProj
                     diceResults.Add(roll);
                     Console.WriteLine($"Dice {i + 1}: {roll}");
                 }
+                
+                int sum = diceResults.Sum();
+
+                Console.WriteLine("\nSum of dice: " + sum);
 
                 diceResults.Sort();//Sorts values in ascending order
 
