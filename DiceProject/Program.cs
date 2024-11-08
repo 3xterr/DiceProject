@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 
 namespace DiceProj
 {
@@ -9,14 +10,17 @@ namespace DiceProj
         static void Main(string[] args)
         {
             Console.WriteLine("Enter the number of dice you want to throw: ");
-            if (int.TryParse(Console.ReadLine(), out int numberOfDice) && numberOfDice > 0)//Converts users input to data type "int", checks if the number of dice is greater than zero and creates a variable that stores the value of amount of dice that user wnats to throw
+            int NumberOfDice = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter how many sides should your dice have: ");
+            int diceSides = Convert.ToInt32(Console.ReadLine());
+            if (NumberOfDice > 0)
             {
                 List<int> diceResults = new List<int>();//Creates a list to store dice result values
                 Random random = new Random(); //Creates a variable that will be later asigned a value of a random number.
 
-                for (int i = 0; i < numberOfDice; i++)//Creates an object called random of class Random that allows to assign a random number to a variable later on.
+                for (int i = 0; i < NumberOfDice; i++)//Creates an object called random of class Random that allows to assign a random number to a variable later on.
                 {
-                    int roll = random.Next(1, 7);
+                    int roll = random.Next(1, (diceSides + 1));
                     diceResults.Add(roll);
                     Console.WriteLine($"Dice {i + 1}: {roll}");
                 }
